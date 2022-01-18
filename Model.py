@@ -2,7 +2,7 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import numpy as np
-import opencv_python as cv2
+import cv2
 from skimage import exposure
 import pandas as pd
 import time
