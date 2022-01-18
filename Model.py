@@ -2,7 +2,6 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image
 import numpy as np
-import cv2
 from skimage import exposure
 import pandas as pd
 import time
@@ -17,7 +16,7 @@ def show_model_page():
 
     # st.title("MobileNet Prediction Model")
     image_uploaded = st.file_uploader("Upload chest X-ray image", type=['jpeg'])
-    st.write(type(image_uploaded))
+    # st.write(type(image_uploaded))
     # st.write(image_uploaded)
     image = Image.open(image_uploaded)
     st.image(image, width= 224, caption="Uploaded image")
@@ -33,12 +32,11 @@ def new_predict(image):
     if image is None:
         print("Wrong path 555")
     else:
-        image = cv2.resize(image,(224,224))
+        image = resize(image, (224,224))
         print(image.shape)
         if len(image.shape)==2:
             image = np.dstack([image, image, image])
             print(image.shape)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         image = image.astype(np.float32) / 255.
         image = HE(image)
         image = np.expand_dims(image, axis=0)
@@ -47,10 +45,10 @@ def new_predict(image):
         model = load_model()
 
     yhat = model.predict(image)
-    print(type(yhat))
-    print(len(yhat))
-    print(yhat.shape)
-    print(yhat)
+#     print(type(yhat))
+#     print(len(yhat))
+#     print(yhat.shape)
+#     print(yhat)
 
     yhat_col = ["Normal (Class 0)", "Pneumonia (Class 1)"]
     yhat_data = [yhat[0][0], yhat[0][1]]
