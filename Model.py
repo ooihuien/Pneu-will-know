@@ -3,6 +3,7 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 from skimage import exposure
+from skimage.transform import resize
 import pandas as pd
 import time
 
