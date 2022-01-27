@@ -9,7 +9,7 @@ def show_userguide_page():
     contents = contents.replace('smth', 'User Guide')
     st.markdown(contents, unsafe_allow_html=True)
     # st.title("User Guide")
-    st.write("Kindly refer the [user manual] for more detailed guidance to use this web app. ")
+    # st.write("Kindly refer the [user manual] for more detailed guidance to use this web app. ")
     st.write("***")
 
     font_color("Home")
@@ -26,5 +26,5 @@ def show_userguide_page():
              "The probability of pneumonia will be shown as a result of prediction.")
 
     font_color("Dashboard")
-    st.write("The **Dashboard** page shows 5 visualizations of pneumonia statistics including number of deaths from pneumonia,"
+    st.write("The **Dashboard** page shows 6 visualizations of pneumonia statistics including number of deaths from pneumonia,"
              "pneumonia death rate, pneumonia risk factors and so on.")
