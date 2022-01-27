@@ -8,7 +8,7 @@ from Dashboard import show_dashboard_page
 # st.set_page_config(layout="wide")
 
 st.sidebar.title("Navigate to...")
-navigator = st.sidebar.radio("", ("Home", "About", "User Guide", "Model", "Dashboard"))
+navigator = st.sidebar.radio("", ("Home", "About", "User Guide", "Prediction Model", "Dashboard"))
 
 st.markdown(
     """ 
@@ -26,7 +26,7 @@ if navigator == "About":
     show_about_page()
 if navigator == "User Guide":
     show_userguide_page()
-if navigator == "Model":
+if navigator == "Prediction Model":
     show_model_page()
 if navigator == "Dashboard":
     show_dashboard_page()
