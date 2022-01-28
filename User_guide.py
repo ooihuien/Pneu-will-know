@@ -9,7 +9,7 @@ def show_userguide_page():
     contents = contents.replace('smth', 'User Guide')
     st.markdown(contents, unsafe_allow_html=True)
     # st.title("User Guide")
-    # st.write("Kindly refer the [user manual] for more detailed guidance to use this web app. ")
+    st.write("Kindly refer the [user manual] for more detailed guidance to use this web app. ")
     st.write("***")
 
     font_color("Home")
